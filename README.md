@@ -1,5 +1,7 @@
 #Simple Service Repository#
 
+[From the InfoQ article "DIY SOA: How to build your own Simple Service Repository" by Ben Wilcock.](http://www.infoq.com/articles/SimpleServiceRepository "DIY SOA: How to build your own Simple Service Repository")
+
 This app is no longer actively maintained, but please feel free to clone or fork if you'd like to use it. Minimum requirements are Maven and Java. Check the POM.xml file for details.
 
 To use the simple service repository follow these 3 simple steps (and repeat them when you modify content in the repository). 
