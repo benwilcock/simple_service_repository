@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="http://common.soagrowers.com/201107" targetNamespace="http://common.soagrowers.com/201107" elementFormDefault="qualified" version="1.0">
+<xs:complexType name="TypeOriginator">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The instance ID of the message sender (usually controlled by a system property)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="locationId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The location ID of the message sender (usually governed by a registered list)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="componentId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The component ID of the message sender (usually controlled by a system property)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="TypeDate.xsd"/>
+	<xs:include schemaLocation="TypeAlpha255.xsd"/>
+	<xs:include schemaLocation="TypeAlpha50.xsd"/>
+	<xs:include schemaLocation="TypeAlpha20.xsd"/>
+	<xs:include schemaLocation="TypeNumber10.xsd"/>
+	<xs:include schemaLocation="TypeProductId.xsd"/>
+	<xs:include schemaLocation="TypeRevisionId.xsd"/>
+	<xs:include schemaLocation="TypeCategoryId.xsd"/>
+	<xs:include schemaLocation="StructureProductHeader.xsd"/>
+	<xs:element name="Product" type="dat:StructureProduct"/>
+	<xs:complexType name="StructureProduct">
+		<xs:complexContent>
+			<xs:extension base="StructureProductHeader">
+				<xs:sequence>
+					<xs:element name="CreatedDate" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="UpdatedDate" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="DeletedDate" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="DimWidthMM" type="TypeNumber10" minOccurs="0"/>
+					<xs:element name="DimHeightMM" type="TypeNumber10" minOccurs="0"/>
+					<xs:element name="DimDepthMM" type="TypeNumber10" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

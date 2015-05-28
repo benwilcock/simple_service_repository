@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://readonlyproduct.entities.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:msg="http://schemas.soagrowers.com/20121231" targetNamespace="http://readonlyproduct.entities.soagrowers.com/20121231">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://readonlyproduct.entities.soagrowers.com/20121231" version="1.0">
+			<xs:import namespace="http://schemas.soagrowers.com/20121231" schemaLocation="20121231_service_products_readonly_messages.xsd" id="msg"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="GetServiceInformationRequestMessage">
+		<wsdl:part name="body" element="msg:GetServiceInformationRequest"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="GetServiceInformationResponseMessage">
+		<wsdl:part name="body" element="msg:GetServiceInformationResponse"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="GetServiceInformationFaultMessage">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductRequestMessage">
+		<wsdl:part name="body" element="msg:GetProductRequest"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductResponseMessage">
+		<wsdl:part name="body" element="msg:GetProductResponse"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="GetProductFaultMessage">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="FindByCategoryNameRequestMessage">
+		<wsdl:part name="body" element="msg:FindByCategoryNameRequest"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindByCategoryNameResponseMessage">
+		<wsdl:part name="body" element="msg:FindByCategoryNameResponse"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindByCategoryNameFaultMessage">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="FindByManufacturerNameRequestMessage">
+		<wsdl:part name="body" element="msg:FindByManufacturerNameRequest"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindByManufacturerNameResponseMessage">
+		<wsdl:part name="body" element="msg:FindByManufacturerNameResponse"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindByManufacturerNameFaultMessage">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="FindAllCategoriesRequestMessage">
+		<wsdl:part name="body" element="msg:FindAllCategoriesRequest"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindAllCategoriesResponseMessage">
+		<wsdl:part name="body" element="msg:FindAllCategoriesResponse"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindAllCategoriesFaultMessage">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="FindAllManufacturersRequestMessage">
+		<wsdl:part name="body" element="msg:FindAllManufacturersRequest"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindAllManufacturersResponseMessage">
+		<wsdl:part name="body" element="msg:FindAllManufacturersResponse"/>
+		<wsdl:part name="header" element="msg:Header"/>
+	</wsdl:message>
+	<wsdl:message name="FindAllManufacturersFaultMessage">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:portType name="ReadonlyProducts">
+		<wsdl:operation name="getServiceInformation">
+			<wsdl:input name="GetServiceInformationInput" message="tns:GetServiceInformationRequestMessage"/>
+			<wsdl:output name="GetServiceInformationOutput" message="tns:GetServiceInformationResponseMessage"/>
+			<wsdl:fault name="GetServiceInformationFault" message="tns:GetServiceInformationFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="getProduct">
+			<wsdl:input name="GetProductInput" message="tns:GetProductRequestMessage"/>
+			<wsdl:output name="GetProductOutput" message="tns:GetProductResponseMessage"/>
+			<wsdl:fault name="GetProductFault" message="tns:GetProductFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="findByCategoryName">
+			<wsdl:input name="FindByCategoryNameInput" message="tns:FindByCategoryNameRequestMessage"/>
+			<wsdl:output name="FindByCategoryNameOutput" message="tns:FindByCategoryNameResponseMessage"/>
+			<wsdl:fault name="FindByCategoryNameFault" message="tns:FindByCategoryNameFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="findByManufacturerName">
+			<wsdl:input name="FindByManufacturerNameInput" message="tns:FindByManufacturerNameRequestMessage"/>
+			<wsdl:output name="FindByManufacturerNameOutput" message="tns:FindByManufacturerNameResponseMessage"/>
+			<wsdl:fault name="FindByManufacturerNameFault" message="tns:FindByManufacturerNameFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="findAllCategories">
+			<wsdl:input name="FindAllCategoriesInput" message="tns:FindAllCategoriesRequestMessage"/>
+			<wsdl:output name="FindAllCategoriesOutput" message="tns:FindAllCategoriesResponseMessage"/>
+			<wsdl:fault name="FindAllCategoriesFault" message="tns:FindAllCategoriesFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="findAllManufacturers">
+			<wsdl:input name="FindAllManufacturersInput" message="tns:FindAllManufacturersRequestMessage"/>
+			<wsdl:output name="FindAllManufacturersOutput" message="tns:FindAllManufacturersResponseMessage"/>
+			<wsdl:fault name="FindAllManufacturersFault" message="tns:FindAllManufacturersFaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ReadonlyProductsBinding" type="tns:ReadonlyProducts">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<!--<wsp:PolicyReference URI="http://localhost:8080/com.soagrowers.servicerepository/r201112/wsdl/policy.xsd#WSRMPolicy"/>-->
+		<wsdl:operation name="getServiceInformation">
+			<wsdlsoap:operation soapAction="getServiceInformation" style="document"/>
+			<wsdl:input name="GetServiceInformationInput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:GetServiceInformationRequestMessage" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="GetServiceInformationOutput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:GetServiceInformationResponseMessage" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="GetServiceInformationFault">
+				<wsdlsoap:fault name="GetServiceInformationFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getProduct">
+			<wsdlsoap:operation soapAction="getProduct" style="document"/>
+			<wsdl:input name="GetProductInput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:GetProductRequestMessage" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="GetProductOutput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:GetProductResponseMessage" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="GetProductFault">
+				<wsdlsoap:fault name="GetProductFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="findByCategoryName">
+			<wsdlsoap:operation soapAction="findByCategoryName" style="document"/>
+			<wsdl:input name="FindByCategoryNameInput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindByCategoryNameRequestMessage" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FindByCategoryNameOutput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindByCategoryNameResponseMessage" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FindByCategoryNameFault">
+				<wsdlsoap:fault name="FindByCategoryNameFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="findByManufacturerName">
+			<wsdlsoap:operation soapAction="findByManufacturerName" style="document"/>
+			<wsdl:input name="FindByManufacturerNameInput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindByManufacturerNameRequestMessage" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FindByManufacturerNameOutput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindByManufacturerNameResponseMessage" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FindByManufacturerNameFault">
+				<wsdlsoap:fault name="FindByManufacturerNameFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="findAllCategories">
+			<wsdlsoap:operation soapAction="findAllCategories" style="document"/>
+			<wsdl:input name="FindAllCategoriesInput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindAllCategoriesRequestMessage" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FindAllCategoriesOutput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindAllCategoriesResponseMessage" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FindAllCategoriesFault">
+				<wsdlsoap:fault name="FindAllCategoriesFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="findAllManufacturers">
+			<wsdlsoap:operation soapAction="findAllManufacturers" style="document"/>
+			<wsdl:input name="FindAllManufacturersInput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindAllManufacturersRequestMessage" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="FindAllManufacturersOutput">
+				<wsdlsoap:body parts="body" use="literal"/>
+				<wsdlsoap:header message="tns:FindAllManufacturersResponseMessage" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FindAllManufacturersFault">
+				<wsdlsoap:fault name="FindAllManufacturersFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ReadonlyProductsEntityService">
+		<wsdl:port name="readonlyProductsPort" binding="tns:ReadonlyProductsBinding">
+			<wsdlsoap:address location="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

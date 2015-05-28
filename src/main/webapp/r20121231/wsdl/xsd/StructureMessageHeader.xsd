@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>Namespace: http://schemas.soagrowers.com/20121231</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="TypeTrackingId.xsd"/>
+	<xs:include schemaLocation="TypeClientId.xsd"/>
+	<xs:include schemaLocation="TypeProcessId.xsd"/>
+	<xs:element name="messageHeader" type="dat:StructureMessageHeader"/>
+	<xs:complexType name="StructureMessageHeader">
+		<xs:sequence>
+			<xs:element name="trackingId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique identifier that ties together an initial service invocation and the chain of subsequent service invocations and responses related to the initial request.  This provides a mechanism for collating events, logs, errors, etc related to an initial service invocation across the architecture layers. Injected at the service infrastructure boundary i.e. the 1st service invoked.  The identifier is passed, unchanged to each subsequent service or process consumed.  All consumed services must retain this identifier and return it as the Tracking ID of any response message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="processId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique identifier that ties together all of the interactions and service invocations related to a single instance of a business process. Created by the service consumer before the business process is called.  The identifier is passed, unchanged to each subsequent service or process consumed.  All consumed services must retain this identifier and return it as the  Process ID of any response message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="clientId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unique identifier that identifies the user that invoked a service or business process. Populated by the client before invoking a service and returned by the invoked service.  Based on client usage of the ID, the ID can change as required.  Generally, the ID is uniquely generated when a client logs in via a UI and is discarded upon logout.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="messageRetryTotal" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>What is the total number of retries that we can expect for
+						this message (e.g. 5)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="messageRetryNumber" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>What is the retry number of this message (e.g. Retry 0 is the
+						first message of chain. retry 5 may be the last message in a retry
+						set).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="messageTimestamp" type="xs:dateTime" use="required">
+			<xs:annotation>
+				<xs:documentation>The date and time that the message was formed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

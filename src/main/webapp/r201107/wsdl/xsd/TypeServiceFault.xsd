@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="http://common.soagrowers.com/201107" targetNamespace="http://common.soagrowers.com/201107" elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="TypeFaultFamily.xsd"/>
+	<xs:include schemaLocation="TypeFaultCode.xsd"/>
+	<xs:include schemaLocation="TypeOriginator.xsd"/>
+	<xs:complexType name="TypeServiceFault">
+		<xs:sequence>
+			<xs:element name="faultType" type="com:TypeFaultFamily"/>
+			<xs:element name="faultCode" type="com:TypeFaultCode">
+				<xs:annotation>
+					<xs:documentation>The code of this fault. The fault code must be documented in the Fault Code Registry on the wiki.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="faultOriginator" type="com:TypeOriginator">
+				<xs:annotation>
+					<xs:documentation>This area allows us to record the originator of the fault.
+						This is useful in monitoring as it means we can take a fault message and decipher
+						where it originated from.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="faultDateTime" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>The system time when the problem was caught.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="faultDetails" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

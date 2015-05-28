@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0">
+	<xs:element name="Date" type="dat:TypeDate"/>
+		<xs:simpleType name="TypeDate">
+		<xs:annotation>
+			<xs:documentation>Date in ISO format based on xs:date
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+</xs:schema>

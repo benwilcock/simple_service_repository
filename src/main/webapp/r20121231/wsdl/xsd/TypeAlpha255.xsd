@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0">
+	<xs:element name="Alpha255" type="dat:TypeAlpha255"/>
+	<xs:simpleType name="TypeAlpha255">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

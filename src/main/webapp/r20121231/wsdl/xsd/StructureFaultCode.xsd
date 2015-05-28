@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0">
+	<xs:complexType name="StructureFaultCode">
+		<xs:sequence>
+			<xs:element name="errorId" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The error identifer which is unique in the system only.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="systemId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

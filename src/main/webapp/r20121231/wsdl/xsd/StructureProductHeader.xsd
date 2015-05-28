@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="TypeRevisionId.xsd"/>
+	<xs:include schemaLocation="TypeProductId.xsd"/>
+	<xs:include schemaLocation="TypeAlpha20.xsd"/>
+	<xs:include schemaLocation="TypeAlpha32.xsd"/>
+	<xs:include schemaLocation="TypeAlpha255.xsd"/>
+	<xs:include schemaLocation="TypeAlpha1024.xsd"/>
+	<xs:element name="ProductHeader" type="StructureProductHeader">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="StructureProductHeader">
+		<xs:sequence>
+			<xs:element name="Id" type="dat:TypeProductId" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This is the Id of the product and it is optional because it can be generated automatically by the database. However in production it's advised that a specific unique Id be generated and supplied to overcome the danger of non-idempotent retries.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Revision" type="dat:TypeRevisionId" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This is the revision Identifier held in the database against this product. It tells us which revision of the record we have. If we try and update the record using an out of date revision, the update will fail.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DocumentType" type="xs:string" fixed="StructureProduct" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fixed to the value "StructureProduct" for this document type.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Name" type="TypeAlpha255">
+				<xs:annotation>
+					<xs:documentation>This is the Product's Name and must be supplied at all times.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Description" type="TypeAlpha1024" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This is the fuller description we have given this product. It can store up to 1024 characters.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Status" type="TypeAlpha20">
+				<xs:annotation>
+					<xs:documentation>This is the status assigned to the product at this time. Should be one of: PROVISIONAL, STOCKABLE, SALEABLE, DISCONTINUED, REMOVED</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ManufacturerName" type="TypeAlpha255" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Manufacturer's Name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CategoryName" type="TypeAlpha255" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The name of the category to which the product belongs</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

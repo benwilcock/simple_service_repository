@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="http://common.soagrowers.com/201107" targetNamespace="http://common.soagrowers.com/201107" elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="EnumMonitoringLevels.xsd"/>
+	<xs:complexType name="TypeMonitoringMessage">
+		<xs:sequence>
+			<xs:element name="logmessage" type="xs:string"/>
+			<xs:element name="level" type="com:EnumMonitoringLevels"/>
+			<xs:element name="recordedDateTime" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

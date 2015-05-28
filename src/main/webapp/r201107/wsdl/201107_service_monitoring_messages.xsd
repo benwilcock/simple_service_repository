@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="http://common.soagrowers.com/201107" targetNamespace="http://common.soagrowers.com/201107" elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="./xsd/TypeMonitoringMessage.xsd"/>
+	<xs:include schemaLocation="./xsd/TypeServiceFault.xsd"/>
+	<xs:element name="MonitoringRequest" type="com:TypeMonitoringMessage"/>
+	<xs:element name="MonitoringResponse" type="xs:string"/>
+	<xs:element name="Fault" type="com:TypeServiceFault"/>
+</xs:schema>

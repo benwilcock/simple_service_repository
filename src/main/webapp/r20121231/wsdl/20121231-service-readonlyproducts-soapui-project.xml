@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="20121231-service-readonlyproducts" resourceRoot="${projectDir}" soapui-version="4.0.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ReadonlyProductsBinding" type="wsdl" bindingName="{http://readonlyproduct.entities.soagrowers.com/20121231}ReadonlyProductsBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?wsdl"><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<wsdl:definitions targetNamespace="http://readonlyproduct.entities.soagrowers.com/20121231" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://readonlyproduct.entities.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:msg="http://schemas.soagrowers.com/20121231">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://readonlyproduct.entities.soagrowers.com/20121231" version="1.0">
+      <xs:import namespace="http://schemas.soagrowers.com/20121231" schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=1" id="msg"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServiceInformationRequestMessage">
+    <wsdl:part name="body" element="msg:GetServiceInformationRequest"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="GetServiceInformationResponseMessage">
+    <wsdl:part name="body" element="msg:GetServiceInformationResponse"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="GetServiceInformationFaultMessage">
+    <wsdl:part name="fault" element="msg:Fault"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductRequestMessage">
+    <wsdl:part name="body" element="msg:GetProductRequest"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductResponseMessage">
+    <wsdl:part name="body" element="msg:GetProductResponse"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductFaultMessage">
+    <wsdl:part name="fault" element="msg:Fault"/>
+  </wsdl:message>
+  <wsdl:message name="FindByCategoryNameRequestMessage">
+    <wsdl:part name="body" element="msg:FindByCategoryNameRequest"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindByCategoryNameResponseMessage">
+    <wsdl:part name="body" element="msg:FindByCategoryNameResponse"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindByCategoryNameFaultMessage">
+    <wsdl:part name="fault" element="msg:Fault"/>
+  </wsdl:message>
+  <wsdl:message name="FindByManufacturerNameRequestMessage">
+    <wsdl:part name="body" element="msg:FindByManufacturerNameRequest"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindByManufacturerNameResponseMessage">
+    <wsdl:part name="body" element="msg:FindByManufacturerNameResponse"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindByManufacturerNameFaultMessage">
+    <wsdl:part name="fault" element="msg:Fault"/>
+  </wsdl:message>
+  <wsdl:message name="FindAllCategoriesRequestMessage">
+    <wsdl:part name="body" element="msg:FindAllCategoriesRequest"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindAllCategoriesResponseMessage">
+    <wsdl:part name="body" element="msg:FindAllCategoriesResponse"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindAllCategoriesFaultMessage">
+    <wsdl:part name="fault" element="msg:Fault"/>
+  </wsdl:message>
+  <wsdl:message name="FindAllManufacturersRequestMessage">
+    <wsdl:part name="body" element="msg:FindAllManufacturersRequest"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindAllManufacturersResponseMessage">
+    <wsdl:part name="body" element="msg:FindAllManufacturersResponse"/>
+    <wsdl:part name="header" element="msg:Header"/>
+  </wsdl:message>
+  <wsdl:message name="FindAllManufacturersFaultMessage">
+    <wsdl:part name="fault" element="msg:Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="ReadonlyProducts">
+    <wsdl:operation name="getServiceInformation">
+      <wsdl:input name="GetServiceInformationInput" message="tns:GetServiceInformationRequestMessage"/>
+      <wsdl:output name="GetServiceInformationOutput" message="tns:GetServiceInformationResponseMessage"/>
+      <wsdl:fault name="GetServiceInformationFault" message="tns:GetServiceInformationFaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <wsdl:input name="GetProductInput" message="tns:GetProductRequestMessage"/>
+      <wsdl:output name="GetProductOutput" message="tns:GetProductResponseMessage"/>
+      <wsdl:fault name="GetProductFault" message="tns:GetProductFaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findByCategoryName">
+      <wsdl:input name="FindByCategoryNameInput" message="tns:FindByCategoryNameRequestMessage"/>
+      <wsdl:output name="FindByCategoryNameOutput" message="tns:FindByCategoryNameResponseMessage"/>
+      <wsdl:fault name="FindByCategoryNameFault" message="tns:FindByCategoryNameFaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findByManufacturerName">
+      <wsdl:input name="FindByManufacturerNameInput" message="tns:FindByManufacturerNameRequestMessage"/>
+      <wsdl:output name="FindByManufacturerNameOutput" message="tns:FindByManufacturerNameResponseMessage"/>
+      <wsdl:fault name="FindByManufacturerNameFault" message="tns:FindByManufacturerNameFaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findAllCategories">
+      <wsdl:input name="FindAllCategoriesInput" message="tns:FindAllCategoriesRequestMessage"/>
+      <wsdl:output name="FindAllCategoriesOutput" message="tns:FindAllCategoriesResponseMessage"/>
+      <wsdl:fault name="FindAllCategoriesFault" message="tns:FindAllCategoriesFaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="findAllManufacturers">
+      <wsdl:input name="FindAllManufacturersInput" message="tns:FindAllManufacturersRequestMessage"/>
+      <wsdl:output name="FindAllManufacturersOutput" message="tns:FindAllManufacturersResponseMessage"/>
+      <wsdl:fault name="FindAllManufacturersFault" message="tns:FindAllManufacturersFaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReadonlyProductsBinding" type="tns:ReadonlyProducts">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <!--<wsp:PolicyReference URI="http://localhost:8080/com.soagrowers.servicerepository/r201112/wsdl/policy.xsd#WSRMPolicy"/>-->
+    <wsdl:operation name="getServiceInformation">
+      <wsdlsoap:operation soapAction="getServiceInformation" style="document"/>
+      <wsdl:input name="GetServiceInformationInput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:GetServiceInformationRequestMessage" part="header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetServiceInformationOutput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:GetServiceInformationResponseMessage" part="header" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="GetServiceInformationFault">
+        <wsdlsoap:fault name="GetServiceInformationFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <wsdlsoap:operation soapAction="getProduct" style="document"/>
+      <wsdl:input name="GetProductInput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:GetProductRequestMessage" part="header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetProductOutput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:GetProductResponseMessage" part="header" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="GetProductFault">
+        <wsdlsoap:fault name="GetProductFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findByCategoryName">
+      <wsdlsoap:operation soapAction="findByCategoryName" style="document"/>
+      <wsdl:input name="FindByCategoryNameInput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindByCategoryNameRequestMessage" part="header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindByCategoryNameOutput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindByCategoryNameResponseMessage" part="header" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FindByCategoryNameFault">
+        <wsdlsoap:fault name="FindByCategoryNameFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findByManufacturerName">
+      <wsdlsoap:operation soapAction="findByManufacturerName" style="document"/>
+      <wsdl:input name="FindByManufacturerNameInput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindByManufacturerNameRequestMessage" part="header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindByManufacturerNameOutput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindByManufacturerNameResponseMessage" part="header" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FindByManufacturerNameFault">
+        <wsdlsoap:fault name="FindByManufacturerNameFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAllCategories">
+      <wsdlsoap:operation soapAction="findAllCategories" style="document"/>
+      <wsdl:input name="FindAllCategoriesInput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindAllCategoriesRequestMessage" part="header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindAllCategoriesOutput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindAllCategoriesResponseMessage" part="header" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FindAllCategoriesFault">
+        <wsdlsoap:fault name="FindAllCategoriesFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAllManufacturers">
+      <wsdlsoap:operation soapAction="findAllManufacturers" style="document"/>
+      <wsdl:input name="FindAllManufacturersInput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindAllManufacturersRequestMessage" part="header" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindAllManufacturersOutput">
+        <wsdlsoap:body parts="body" use="literal"/>
+        <wsdlsoap:header message="tns:FindAllManufacturersResponseMessage" part="header" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FindAllManufacturersFault">
+        <wsdlsoap:fault name="FindAllManufacturersFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReadonlyProductsEntityService">
+    <wsdl:port name="readonlyProductsPort" binding="tns:ReadonlyProductsBinding">
+      <wsdlsoap:address location="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=7"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=24"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=6"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=10"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=19"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=11"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=17"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=9"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=22"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=2"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=5"/>
+  <xs:element name="GetServiceInformationResponse" type="dat:StructureServiceInformation"/>
+  <xs:element name="GetServiceInformationRequest" type="dat:StructureServiceInformation"/>
+  <xs:element name="GetProductRequest" type="dat:TypeProductId"/>
+  <xs:element name="GetProductResponse" type="dat:StructureProduct"/>
+  <xs:element name="Fault" type="dat:StructureServiceFault"/>
+  <xs:element name="Header" type="dat:StructureMessageHeader"/>
+  <xs:element name="FindByCategoryNameRequest" type="dat:TypeAlpha255"/>
+  <xs:element name="FindByCategoryNameResponse" type="dat:StructureProductSearchResults"/>
+  <xs:element name="FindByManufacturerNameRequest" type="dat:TypeAlpha255"/>
+  <xs:element name="FindByManufacturerNameResponse" type="dat:StructureProductSearchResults"/>
+  <xs:element name="FindAllCategoriesRequest" type="dat:TypeAlpha255" default="?"/>
+  <xs:element name="FindAllCategoriesResponse" type="dat:StructureFindAllCategoriesSearchResults"/>
+  <xs:element name="FindAllManufacturersRequest" type="dat:TypeAlpha255" default="?"/>
+  <xs:element name="FindAllManufacturersResponse" type="dat:StructureFindAllManufacturersSearchResults"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=7</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=20"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=16"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=13"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=21"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=24"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=25"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=17"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=8"/>
+  <xs:element name="Product" type="dat:StructureProduct"/>
+  <xs:complexType name="StructureProduct">
+    <xs:complexContent>
+      <xs:extension base="StructureProductHeader">
+        <xs:sequence>
+          <xs:element name="CreatedDate" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="UpdatedDate" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="DeletedDate" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="DimWidthMM" type="TypeNumber10" minOccurs="0"/>
+          <xs:element name="DimHeightMM" type="TypeNumber10" minOccurs="0"/>
+          <xs:element name="DimDepthMM" type="TypeNumber10" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=20</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Date" type="dat:TypeDate"/>
+  <xs:simpleType name="TypeDate">
+    <xs:annotation>
+      <xs:documentation>Date in ISO format based on xs:date</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Alpha255" type="dat:TypeAlpha255"/>
+  <xs:simpleType name="TypeAlpha255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=16</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Alpha50" type="dat:TypeAlpha50"/>
+  <xs:simpleType name="TypeAlpha50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=13</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Alpha20" type="dat:TypeAlpha20"/>
+  <xs:simpleType name="TypeAlpha20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=21</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Number10" type="dat:TypeNumber10"/>
+  <xs:simpleType name="TypeNumber10">
+    <xs:restriction base="xs:unsignedLong">
+      <xs:totalDigits value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=24</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=27"/>
+  <xs:element name="ProductId" type="dat:TypeProductId"/>
+  <xs:simpleType name="TypeProductId">
+    <xs:annotation>
+      <xs:documentation>The identifier for the business product instance.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="dat:TypeUUID"/>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=27</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="UUID" type="TypeUUID">
+    <xs:annotation>
+      <xs:documentation>A universally unique ID</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:simpleType name="TypeUUID">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of a Universally Unique ID (UUID), generally the id of an element.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=25</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="RevisionId" type="TypeRevisionId">
+    <xs:annotation>
+      <xs:documentation>Describes the Revision attribute of the data structure as a prepended UUID.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:simpleType name="TypeRevisionId">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of a Universally Unique ID (UUID) with a revision identifier.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+-[a-fA-F0-9]{32}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=17</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=27"/>
+  <xs:element name="CategoryId">
+    <xs:annotation>
+      <xs:documentation>Comment describing your root element</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:simpleType name="TypeCategoryId">
+    <xs:restriction base="TypeUUID"/>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=8</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=25"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=24"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=13"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=15"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=12"/>
+  <xs:element name="ProductHeader" type="StructureProductHeader">
+    <xs:annotation>
+      <xs:documentation>Comment describing your root element</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="StructureProductHeader">
+    <xs:sequence>
+      <xs:element name="Id" type="dat:TypeProductId" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>This is the Id of the product and it is optional because it can be generated automatically by the database. However in production it's advised that a specific unique Id be generated and supplied to overcome the danger of non-idempotent retries.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Revision" type="dat:TypeRevisionId" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>This is the revision Identifier held in the database against this product. It tells us which revision of the record we have. If we try and update the record using an out of date revision, the update will fail.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentType" type="xs:string" fixed="StructureProduct" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Fixed to the value "StructureProduct" for this document type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Name" type="TypeAlpha255">
+        <xs:annotation>
+          <xs:documentation>This is the Product's Name and must be supplied at all times.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" type="TypeAlpha1024" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>This is the fuller description we have given this product. It can store up to 1024 characters.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" type="TypeAlpha20">
+        <xs:annotation>
+          <xs:documentation>This is the status assigned to the product at this time. Should be one of: PROVISIONAL, STOCKABLE, SALEABLE, DISCONTINUED, REMOVED</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ManufacturerName" type="TypeAlpha255" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The Manufacturer's Name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CategoryName" type="TypeAlpha255" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The name of the category to which the product belongs</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=15</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Alpha32" type="dat:TypeAlpha32"/>
+  <xs:simpleType name="TypeAlpha32">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32"/>
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=12</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Alpha1024" type="dat:TypeAlpha1024"/>
+  <xs:simpleType name="TypeAlpha1024">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=6</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:annotation>
+    <xs:documentation>Namespace: http://schemas.soagrowers.com/20121231</xs:documentation>
+  </xs:annotation>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=26"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=18"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=23"/>
+  <xs:element name="messageHeader" type="dat:StructureMessageHeader"/>
+  <xs:complexType name="StructureMessageHeader">
+    <xs:sequence>
+      <xs:element name="trackingId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The unique identifier that ties together an initial service invocation and the chain of subsequent service invocations and responses related to the initial request.  This provides a mechanism for collating events, logs, errors, etc related to an initial service invocation across the architecture layers. Injected at the service infrastructure boundary i.e. the 1st service invoked.  The identifier is passed, unchanged to each subsequent service or process consumed.  All consumed services must retain this identifier and return it as the Tracking ID of any response message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="processId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The unique identifier that ties together all of the interactions and service invocations related to a single instance of a business process. Created by the service consumer before the business process is called.  The identifier is passed, unchanged to each subsequent service or process consumed.  All consumed services must retain this identifier and return it as the  Process ID of any response message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="clientId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The unique identifier that identifies the user that invoked a service or business process. Populated by the client before invoking a service and returned by the invoked service.  Based on client usage of the ID, the ID can change as required.  Generally, the ID is uniquely generated when a client logs in via a UI and is discarded upon logout.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageRetryTotal" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>What is the total number of retries that we can expect for
+						this message (e.g. 5)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="messageRetryNumber" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>What is the retry number of this message (e.g. Retry 0 is the
+						first message of chain. retry 5 may be the last message in a retry
+						set).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="messageTimestamp" type="xs:dateTime" use="required">
+      <xs:annotation>
+        <xs:documentation>The date and time that the message was formed.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=26</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="TrackingId" type="dat:TypeTrackingId"/>
+  <xs:simpleType name="TypeTrackingId">
+    <xs:annotation>
+      <xs:documentation>The identifier of the message flow across a series of service invocations.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:anyURI">
+      <xs:pattern value="uuid:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=18</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="ClientId" type="dat:TypeClientId"/>
+  <xs:simpleType name="TypeClientId">
+    <xs:annotation>
+      <xs:documentation>The identifier for the user's session on the user interface.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+    <!--<xs:restriction base="xs:anyURI">
+			<xs:pattern value="uuid:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+		</xs:restriction>-->
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=23</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=27"/>
+  <xs:element name="ProcessId" type="dat:TypeProcessId"/>
+  <xs:simpleType name="TypeProcessId">
+    <xs:annotation>
+      <xs:documentation>The identifier for the business process instance.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="dat:TypeUUID"/>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=10</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=4"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=3"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=6"/>
+  <xs:complexType name="StructureServiceFault">
+    <xs:sequence>
+      <xs:element name="faultType" type="dat:StructureFaultFamily">
+        <xs:annotation>
+          <xs:documentation>States if this is a BUSINESS or a TECHNICAL fault.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultCode" type="dat:StructureFaultCode">
+        <xs:annotation>
+          <xs:documentation>The code of this fault. The fault code must be documented in the Fault Code Registry.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultDateTime" type="xs:dateTime" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The system time when the problem was caught.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="originalRequestHeader" type="dat:StructureMessageHeader" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>This field should contain the clients original message header from the request without any change.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultDetails" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>OPTIONAL. This field should contain the details of the fault.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="faultTrace" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>OPTIONAL. This field can contain the details of the problem, such as a stacktrace of the issue for debugging purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=4</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:simpleType name="StructureFaultFamily">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BUSINESS">
+        <xs:annotation>
+          <xs:documentation>Example of BUSINESS problems: attribute value is out of range, the Person to be updated is not available anymore.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TECHNICAL">
+        <xs:annotation>
+          <xs:documentation>Example of TECHNICAL problems: the underlying database is not available.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=3</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:complexType name="StructureFaultCode">
+    <xs:sequence>
+      <xs:element name="errorId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The error identifer which is unique in the system only.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="systemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=19</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<!---->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Confirmation" type="dat:TypeConfirmation"/>
+  <xs:simpleType name="TypeConfirmation">
+    <xs:restriction base="xs:NCName">
+      <xs:enumeration value="Y"/>
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=11</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="ServiceInformation" type="StructureServiceInformation">
+    <xs:annotation>
+      <xs:documentation>Comment describing your root element</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="StructureServiceInformation">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Version" type="xs:string" minOccurs="0"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=9</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=8"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14"/>
+  <xs:element name="ProductSearchResults" type="StructureProductSearchResults"/>
+  <xs:complexType name="StructureProductSearchResults">
+    <xs:sequence>
+      <xs:element name="TotalResults" type="xs:int" minOccurs="0"/>
+      <xs:element name="SearchTerm" type="dat:TypeAlpha255" minOccurs="0"/>
+      <xs:element name="ProductSearchResult" type="dat:StructureProductHeader" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=22</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:element name="Number3" type="dat:TypeNumber3"/>
+  <xs:simpleType name="TypeNumber3">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=2</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=21"/>
+  <xs:element name="FindAllCategoriesSearchResults" type="StructureFindAllCategoriesSearchResults"/>
+  <xs:complexType name="StructureFindAllCategoriesSearchResults">
+    <xs:sequence>
+      <xs:element name="TotalResults" type="TypeNumber10"/>
+      <xs:element name="Category" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="TypeAlpha255"/>
+            <xs:element name="Qty" type="TypeNumber10"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=5</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown.-->
+<xs:schema targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0" xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231">
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=14"/>
+  <xs:include schemaLocation="http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService?xsd=21"/>
+  <xs:element name="FindAllManufacturersSearchResults" type="StructureFindAllManufacturersSearchResults"/>
+  <xs:complexType name="StructureFindAllManufacturersSearchResults">
+    <xs:sequence>
+      <xs:element name="TotalResults" type="TypeNumber10"/>
+      <xs:element name="Manufacturer" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="TypeAlpha255"/>
+            <xs:element name="Qty" type="TypeNumber10"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:endpoint>http://localhost:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="findByCategoryName" name="findByCategoryName" bindingOperationName="findByCategoryName" type="Request-Response" outputName="FindByCategoryNameOutput" inputName="FindByCategoryNameInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindByCategoryNameRequest>Combat Systems</ns:FindByCategoryNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findByCategoryName"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="findByManufacturerName" name="findByManufacturerName" bindingOperationName="findByManufacturerName" type="Request-Response" outputName="FindByManufacturerNameOutput" inputName="FindByManufacturerNameInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindByManufacturerNameRequest>Encom</ns:FindByManufacturerNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findByManufacturerName"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getProduct" name="getProduct" bindingOperationName="getProduct" type="Request-Response" outputName="GetProductOutput" inputName="GetProductInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:GetProductRequest>14209fd2-5b04-4cc5-b9cd-fc2fbfd9062f</ns:GetProductRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getProduct"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getServiceInformation" name="getServiceInformation" bindingOperationName="getServiceInformation" type="Request-Response" outputName="GetServiceInformationOutput" inputName="GetServiceInformationInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:GetServiceInformationRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getServiceInformation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="findAllCategories" name="findAllCategories" bindingOperationName="findAllCategories" type="Request-Response" outputName="FindAllCategoriesOutput" inputName="FindAllCategoriesInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindAllCategoriesRequest>?</ns:FindAllCategoriesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findAllCategories"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="findAllManufacturers" name="findAllManufacturers" bindingOperationName="findAllManufacturers" type="Request-Response" outputName="FindAllManufacturersOutput" inputName="FindAllManufacturersInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindAllManufacturersRequest>?</ns:FindAllManufacturersRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findAllManufacturers"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite"><con:description>Tests the Readonly Product Service by...
+
+Checking the getServiceInformation operation.
+Performing a findByManufacturerName.
+Performing a findByCategoryId for the category of the first product returned in the last test.
+Performing a getProduct for the first product returned in the last test.</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="findAndGetByCategoryName" searchProperties="true" id="63337ad3-f87a-4c00-8efb-858690586726"><con:description>findAllCategories: Gets a list of all the known categories and 
+selects the first one in the list to use for the remainder of the test suite.
+
+findByCategoryName: Finds and lists all the products in the given
+category. Selects the Id of the first product to use for the remainder 
+of the suite.
+
+getProduct: Gets the product information of the Product described by
+the current ProductId in the test Properties.</con:description><con:settings/><con:testStep type="properties" name="setProperties Test Step"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ClientId</con:name><con:value>SOAP-UI</con:value></con:property><con:property><con:name>CategoryName</con:name><con:value>Augmentation Systems</con:value></con:property><con:property><con:name>ProductId</con:name><con:value>071dc021-77cf-416d-88a4-69578f2264b2</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="findAllCategories"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>findAllCategories</con:operation><con:request name="findAllCategories" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="${=javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(GregorianCalendar.getInstance())}"/>
+      <ns:clientId>${#ClientId}</ns:clientId>
+      <ns:messageRetryTotal>0</ns:messageRetryTotal>
+      <ns:messageRetryNumber>0</ns:messageRetryNumber>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindAllCategoriesRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains2"><con:configuration><token>&lt;TotalResults>10&lt;/TotalResults></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="findByManufacturerName" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="CategoryName Transfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="false" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>CategoryName</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>findAllCategories</con:sourceStep><con:sourcePath>declare namespace S='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://readonlyproduct.entities.soagrowers.com/20121231';
+declare namespace ns2='http://schemas.soagrowers.com/20121231';
+//ns2:FindAllCategoriesResponse/ns2:Category[1]/ns2:Name</con:sourcePath><con:targetType>CategoryName</con:targetType><con:targetStep>setProperties Test Step</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="request" name="findByCategoryName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>findByCategoryName</con:operation><con:request name="findByCategoryName" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="?"/>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindByCategoryNameRequest>${#CategoryName}</ns:FindByCategoryNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="findByCategoryId" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="ProductId Transfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>ProductId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>findByCategoryName</con:sourceStep><con:sourcePath>declare namespace S='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://product.entities.soagrowers.com/20121231';
+declare namespace ns2='http://schemas.soagrowers.com/20121231';
+//ns2:FindByCategoryNameResponse/ns2:ProductSearchResult[1]/ns2:Id</con:sourcePath><con:targetType>ProductId</con:targetType><con:targetStep>setProperties Test Step</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="request" name="getProduct"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>getProduct</con:operation><con:request name="getProduct" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="${=javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(GregorianCalendar.getInstance())}"/>
+      <ns:clientId>${#ClientId}</ns:clientId>
+      <ns:messageRetryTotal>0</ns:messageRetryTotal>
+      <ns:messageRetryNumber>0</ns:messageRetryNumber>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:GetProductRequest>${#ProductId}</ns:GetProductRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains 1"><con:configuration><token>SALEABLE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getProduct" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="findAndGetByManufacturerName" searchProperties="true" id="df88cb8d-1b8e-4dad-b0a9-5e5f88190e65"><con:description>findAllManufacturers: Gets a list of all the known manufacturers and 
+selects the first one in the list to use for the remainder of the test suite.
+
+findByManufacturerName: Finds and lists all the products manufactured 
+by the given manufacturer. Selects the Id of the first product to use for
+the remainter of the suite.
+
+getProduct: Gets the product information of the Product described by
+the current ProductId in the test Properties.</con:description><con:settings/><con:testStep type="properties" name="setProperties Test Step"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ClientId</con:name><con:value>SOAP-UI</con:value></con:property><con:property><con:name>ManufacturerName</con:name><con:value>Acme Inc</con:value></con:property><con:property><con:name>ProductId</con:name><con:value>25cdf7f2-4ee1-4a63-afff-d82fb1dd7c80</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="findAllManufacturers"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>findAllManufacturers</con:operation><con:request name="findAllManufacturers" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="${=javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(GregorianCalendar.getInstance())}"/>
+<ns:clientId>${#ClientId}</ns:clientId>
+      <ns:messageRetryTotal>0</ns:messageRetryTotal>
+      <ns:messageRetryNumber>0</ns:messageRetryNumber>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindAllManufacturersRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains2"><con:configuration><token>&lt;TotalResults>10&lt;/TotalResults></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="findByManufacturerName" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="ManufacturerName Transfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="false" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>ManufacturerName</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>findAllManufacturers</con:sourceStep><con:sourcePath>declare namespace S='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://readonlyproduct.entities.soagrowers.com/20121231';
+declare namespace ns2='http://schemas.soagrowers.com/20121231';
+//ns2:FindAllManufacturersResponse/ns2:Manufacturer[1]/ns2:Name</con:sourcePath><con:targetType>ManufacturerName</con:targetType><con:targetStep>setProperties Test Step</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="request" name="findByManufacturerName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>findByManufacturerName</con:operation><con:request name="findByManufacturerName" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="${=javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(GregorianCalendar.getInstance())}"/>
+      <ns:clientId>${#ClientId}</ns:clientId>
+      <ns:messageRetryTotal>0</ns:messageRetryTotal>
+      <ns:messageRetryNumber>0</ns:messageRetryNumber>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:FindByManufacturerNameRequest>${#ManufacturerName}</ns:FindByManufacturerNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains2"><con:configuration><token>&lt;TotalResults>10&lt;/TotalResults></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="findByCategoryId" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="transfer" name="ProductId Transfer"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>ProductId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>findByManufacturerName</con:sourceStep><con:sourcePath>declare namespace S='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://product.entities.soagrowers.com/20121231';
+declare namespace ns2='http://schemas.soagrowers.com/20121231';
+//ns2:FindByManufacturerNameResponse/ns2:ProductSearchResult[1]/ns2:Id</con:sourcePath><con:targetType>ProductId</con:targetType><con:targetStep>setProperties Test Step</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="request" name="getProduct"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>getProduct</con:operation><con:request name="getProduct" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="${=javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(GregorianCalendar.getInstance())}"/>
+      <ns:clientId>${#ClientId}</ns:clientId>
+      <ns:messageRetryTotal>0</ns:messageRetryTotal>
+      <ns:messageRetryNumber>0</ns:messageRetryNumber>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:GetProductRequest>${#ProductId}</ns:GetProductRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains 1"><con:configuration><token>SALEABLE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getProduct" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getServiceInformation" searchProperties="true" id="10530969-f57d-4a5e-b71a-ea1acf1ca764"><con:description>getServiceInformation: Tests that the service information can be retrieved.</con:description><con:settings/><con:testStep type="request" name="getServiceInformation"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ReadonlyProductsBinding</con:interface><con:operation>getServiceInformation</con:operation><con:request name="getServiceInformation" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ec2-79-125-87-47.eu-west-1.compute.amazonaws.com:8080/r20121231.product.readonly/ReadonlyProductsEntityService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.soagrowers.com/20121231">
+   <soapenv:Header>
+      <ns:Header messageTimestamp="${=javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar(GregorianCalendar.getInstance())}"/>
+      <ns:clientId>${#ClientId}</ns:clientId>
+      <ns:messageRetryTotal>0</ns:messageRetryTotal>
+      <ns:messageRetryNumber>0</ns:messageRetryNumber>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns:GetServiceInformationRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>READONLY-PRODUCT-ENTITY-SERVICE</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="getServiceInformation" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

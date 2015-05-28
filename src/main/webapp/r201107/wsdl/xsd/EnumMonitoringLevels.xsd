@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:com="http://common.soagrowers.com/201107" targetNamespace="http://common.soagrowers.com/201107" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="EnumMonitoringLevels">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INFO">
+				<xs:annotation>
+					<xs:documentation>Logging level for INFO's</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WARNING">
+				<xs:annotation>
+					<xs:documentation>Logging level for WARNING's</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ERROR">
+				<xs:annotation>
+					<xs:documentation>Logging level for ERROR's</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0">
+	<xs:simpleType name="StructureFaultFamily">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BUSINESS">
+				<xs:annotation>
+					<xs:documentation>Example of BUSINESS problems: attribute value is out of range, the Person to be updated is not available anymore.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TECHNICAL">
+				<xs:annotation>
+					<xs:documentation>Example of TECHNICAL problems: the underlying database is not available.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://schemas.soagrowers.com/20121231" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="TypeAlpha255.xsd"/>
+	<xs:include schemaLocation="TypeNumber10.xsd"/>
+	<xs:element name="FindAllManufacturersSearchResults" type="StructureFindAllManufacturersSearchResults"/>
+	<xs:complexType name="StructureFindAllManufacturersSearchResults">
+		<xs:sequence>
+			<xs:element name="TotalResults" type="TypeNumber10"/>
+			<xs:element name="Manufacturer" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="TypeAlpha255"/>
+						<xs:element name="Qty" type="TypeNumber10"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dat="http://schemas.soagrowers.com/20121231" targetNamespace="http://schemas.soagrowers.com/20121231" elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="xsd/StructureProduct.xsd"/>
+	<xs:include schemaLocation="xsd/TypeProductId.xsd"/>
+	<xs:include schemaLocation="xsd/StructureMessageHeader.xsd"/>
+	<xs:include schemaLocation="xsd/StructureServiceFault.xsd"/>
+	<xs:include schemaLocation="xsd/TypeConfirmation.xsd"/>
+	<xs:include schemaLocation="xsd/StructureServiceInformation.xsd"/>
+	<xs:include schemaLocation="xsd/TypeAlpha255.xsd"/>
+	<xs:include schemaLocation="xsd/TypeCategoryId.xsd"/>
+	<xs:include schemaLocation="xsd/StructureProductSearchResults.xsd"/>
+	<xs:include schemaLocation="xsd/TypeNumber3.xsd"/>
+	<xs:include schemaLocation="xsd/StructureCategoriesSearchResults.xsd"/>
+	<xs:include schemaLocation="xsd/StructureManufacturerSearchResults.xsd"/>
+	<xs:element name="GetServiceInformationResponse" type="dat:StructureServiceInformation"/>
+	<xs:element name="GetServiceInformationRequest" type="dat:StructureServiceInformation"/>
+	<xs:element name="GetProductRequest" type="dat:TypeProductId"/>
+	<xs:element name="GetProductResponse" type="dat:StructureProduct"/>
+	<xs:element name="Fault" type="dat:StructureServiceFault"/>
+	<xs:element name="Header" type="dat:StructureMessageHeader"/>
+	<xs:element name="FindByCategoryNameRequest" type="dat:TypeAlpha255"/>
+	<xs:element name="FindByCategoryNameResponse" type="dat:StructureProductSearchResults"/>
+	<xs:element name="FindByManufacturerNameRequest" type="dat:TypeAlpha255"/>
+	<xs:element name="FindByManufacturerNameResponse" type="dat:StructureProductSearchResults"/>
+	<xs:element name="FindAllCategoriesRequest" type="dat:TypeAlpha255" default="?"/>
+	<xs:element name="FindAllCategoriesResponse" type="dat:StructureFindAllCategoriesSearchResults"/>
+	<xs:element name="FindAllManufacturersRequest" type="dat:TypeAlpha255" default="?"/>
+	<xs:element name="FindAllManufacturersResponse" type="dat:StructureFindAllManufacturersSearchResults"/>
+</xs:schema>

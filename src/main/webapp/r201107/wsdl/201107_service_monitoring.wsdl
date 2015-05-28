@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://monitoring.utilities.soagrowers.com/201107" xmlns:msg="http://common.soagrowers.com/201107" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://monitoring.utilities.soagrowers.com/201107">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://monitoring.utilities.soagrowers.com/201107" version="1.0">
+			<xs:import namespace="http://common.soagrowers.com/201107" schemaLocation="201107_service_monitoring_messages.xsd" id="msg"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="RequestMessage">
+		<wsdl:part name="body" element="msg:MonitoringRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ResponseMessage">
+		<wsdl:part name="body" element="msg:MonitoringResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ServiceFault">
+		<wsdl:part name="fault" element="msg:Fault"/>
+	</wsdl:message>
+	<wsdl:portType name="Monitoring">
+		<wsdl:operation name="monitor">
+			<wsdl:input name="RequestMessage" message="RequestMessage"/>
+			<wsdl:output name="ResponseMessage" message="ResponseMessage"/>
+			<wsdl:fault name="ServiceFault" message="ServiceFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MonitoringBinding" type="Monitoring">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="monitor">
+			<wsdlsoap:operation soapAction="monitor" style="document"/>
+			<wsdl:input name="RequestMessage">
+				<wsdlsoap:body parts="body" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ResponseMessage">
+				<wsdlsoap:body parts="body" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="ServiceFault">
+				<wsdlsoap:fault name="ServiceFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MonitoringService">
+		<wsdl:port name="MonitoringPort" binding="MonitoringBinding">
+			<wsdlsoap:address location="http://localhost:8080/r201107.utilities.monitoring/MonitoringService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
